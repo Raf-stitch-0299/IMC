@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="script.js">
+    <title> Calculadora IMC </title>
+</head>
+<body>
+
+    <div class="card">
+
+    <div class="texto">
+
+    <label for="peso"> Peso (Kg):</label>
+
+    <input type="number" id="peso" name="peso">
+    <br>
+
+    <label for="altura"> Altura (Ex. 1,61) :</label>
+
+    <input type="number" id="altura" name="altura">
+    <br>
+
+    <button onclick="calcularImc()"> Somar > </button>
+    <br>
+    <p> Seu Índice de Massa Corporal é: <span id="resultado"> </span></p>
+
+</div>
+</div>
+    <script>
+        function calcularImc() {
+            const peso = document.getElementById('peso').value;
+            const altura = document.getElementById('altura').value;
+            const imc = peso / (altura**2)
+
+            document.getElementById('resultado').textContent = imc.toFixed(2);
+        }
+
+        let tituloDinamico = document.title;
+        window.addEventListener("blur",() => {
+            document.title = "até mais "
+        } );
+
+        window.addEventListener("focus",() =>{
+            document.title = "voltou ne?"
+
+        });
+
+
+
+
+
+    </script>
+    
+    <footer>
+            <p> Direitos de criação do site IMC Rafael Barreto &copy; (rafaelbarreto2425@gmail.com)</p>
+          </footer>
+
+</body>
+</html>
